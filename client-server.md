@@ -55,7 +55,7 @@ ubuntu      7999  0.0  0.0   8168   720 pts/0    S+   03:32   0:00 grep --color=
 - mysqlreport - Makes a friendly report of important MySQL status values.
 - mysqlcheck - a command line client to check, repair, and optimize tables.
 
-### STEP 4 -Open TCP port 3306 on "mysql-client"
+### STEP 4 -Open TCP port 3306 on "mysql-server"
 By default MySQL server uses TCP port 3306. Now, we'd use mysql server's local IP address to connect from mysql client. Which means so to creat a new  ‘Inbound rules’ in "mysql-server". 
 
 ![](assets/2.png)
@@ -76,7 +76,8 @@ login to your mysql server with:
 
 `mysql> CREATE DATABASE phoenix_db;`
 
-`mysql> GRANT ALL PRIVILEGES ON phoenix_db* TO 'mysql-client'@'%';`
+`mysql> GRANT ALL PRIVILEGES ON phoenix_db.* TO 'mysql-client'@'%';`
+![](assets/6.png)
 
 ### STEP 6 -Configure MySQL server to allow connections from remote hosts.
    
@@ -92,7 +93,7 @@ Do well to restart the mysql server after this adjustment
 
 ### STEP 6 -Connect mysql client  remotely to mysql server Database Engine, without using SSH. but with the mysql utility.
 
-`$ sudo mysql -u mysql-client -h 192.xxx.x.xx -p`
+`$ sudo mysql -u <mysqlusername> -h <host ip address> -p`
 
 You should see something like this:
 
@@ -103,6 +104,8 @@ You should see something like this:
  `mysql> SHOW DATABASES;`
 
  ![](assets/5.png)
+
+ Congratulations! As you've just successfully deloyed a fully functional MySQL Client-Server setup.✨Yippee!✨
 
 
 
