@@ -64,7 +64,7 @@ By default MySQL server uses TCP port 3306. Now, we'd use mysql server's local I
 
 `sudo mysql_secure_installation`
 
-You can mostly answer "y" for the subsequent prompts. 
+You can use "n" for the first prompt and mostly answer "y" for the subsequent prompts. 
 
 ### STEP 6 -Create a user and a db, and grant the new user every privilege to the newly created db
 
